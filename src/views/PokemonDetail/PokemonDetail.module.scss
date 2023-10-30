@@ -1,0 +1,218 @@
+.pokemonDetailWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: Roboto;
+  .bgElements {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    .square {
+      height: 200px;
+      transform: rotate(67deg);
+      top: -165px;
+      position: absolute;
+      left: -135px;
+      opacity: 10%;
+    }
+    .points {
+      height: 70px;
+      position: absolute;
+      top: 20%;
+      left: 22%;
+      opacity: 10%;
+    }
+    .pokeball {
+      position: absolute;
+      top: 19%;
+      right: -5%;
+      opacity: 25%;
+    }
+  }
+  .buttonContainer {
+    position: relative;
+    padding: 17px 17px 0px 17px;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .backButton {
+      width: 40px;
+      height: 40px;
+      color: white;
+      font-size: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .heartButton {
+      width: 40px;
+      height: 40px;
+      color: white;
+      font-size: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      .hearFull {
+        color: #ff5151;
+      }
+    }
+  }
+  .errorAlert {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 15px;
+
+    .errorAlertContainer {
+      width: 40%;
+      background-color: #ff5151;
+      border-radius: 12px;
+      padding: 14px;
+      max-width: 200px;
+      color: white;
+      display: none;
+      &.in {
+        display: block;
+        animation: myAnim 1s ease 0s 1 normal forwards;
+      }
+      &.out {
+        display: block;
+        animation: myAnimBack 1s ease 0s 1 normal forwards;
+      }
+    }
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 70px;
+    left: 22px;
+    .name {
+      font-size: 41px;
+      color: white;
+      font-weight: 600;
+    }
+    .types {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      .type {
+        background-color: rgba(255, 255, 255, 0.4588235294);
+        border-radius: 17px;
+        padding: 2px 15px;
+        font-size: 17px;
+        font-weight: 400;
+        color: #fff;
+        height: 22px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+  .pokemonImg {
+    width: 100%;
+
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 23%;
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .infoElements {
+    z-index: 2;
+    background-color: white;
+    height: 55%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    padding: 50px 70px;
+    box-sizing: border-box;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 480px) {
+      padding: 50px 50px;
+    }
+
+    .scrollWrapper {
+      overflow-y: auto;
+      max-height: calc(100% - 2px);
+      overflow-x: hidden;
+    }
+    .statsTitle {
+      font-size: 24px;
+      font-weight: 600;
+      min-width: 79px;
+      margin-top: 20px;
+    }
+    .infoContainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+      align-items: center;
+      gap: 8px;
+      min-width: 335px;
+      .infoRow {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        .title {
+          font-weight: 600;
+          font-size: 15px;
+          color: #8b8787;
+          display: flex;
+          width: 60px;
+          display: flex;
+          align-items: center;
+        }
+        .value {
+          font-size: 15px;
+          width: 108px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes myAnimBack {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}

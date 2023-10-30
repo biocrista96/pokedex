@@ -1,0 +1,23 @@
+.HeaderWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: center;
+  height: 100px;
+  font-family: Roboto;
+  .teamButtonContainer {
+    height: 45px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    .TeamButton {
+      height: 25px;
+      width: 40px;
+    }
+  }
+}

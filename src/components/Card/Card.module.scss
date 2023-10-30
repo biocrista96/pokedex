@@ -1,0 +1,97 @@
+.cardWrapper {
+  height: 200px;
+  width: 100%;
+  min-width: 180px;
+  border-radius: 8px;
+  background-color: aqua;
+  position: relative;
+  font-family: Roboto;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  .draggable {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+    background: #00000057;
+    .dragIcon {
+      display: flex;
+      color: #afa9a9;
+      font-size: 43px;
+      align-items: center;
+
+      height: 100%;
+      width: 21%;
+      justify-content: center;
+      @media (max-width: 480) {
+        font-size: 33px;
+      }
+    }
+    &:active,
+    &:hover {
+      .dragIcon {
+        background: rgb(0 0 0 / 18%);
+      }
+    }
+  }
+  .pokeImg {
+    position: absolute;
+    height: 70%;
+    z-index: 2;
+    bottom: 4px;
+    right: 4px;
+  }
+  .pokeBg {
+    position: absolute;
+    height: 85%;
+    z-index: 1;
+    bottom: -25px;
+    right: -25px;
+    overflow: hidden;
+  }
+  .pokeInfo {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    height: calc(100% - 3px);
+    padding: 15px;
+    gap: 15px;
+
+    .title {
+      font-size: 30px;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 190px;
+      height: 35%;
+      display: flex;
+      align-items: end;
+    }
+    .types {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      .type {
+        background-color: rgba(255, 255, 255, 0.4588235294);
+        border-radius: 17px;
+        padding: 2px 15px;
+        font-size: 17px;
+        font-weight: 400;
+        color: #fff;
+        height: 22px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}
